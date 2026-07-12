@@ -1,36 +1,39 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# REST-API recipe
 
-## Getting Started
+## 1. Directory Structure
 
-First, run the development server:
+    Contract-first, versioned API with clear separation between HTTP concerns, business logic, and data access.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```ts
+src/
+  app/
+    api/
+      v1/
+        users/
+          route.ts           # GET /api/v1/users, POST /api/v1/users
+          [id]/
+            route.ts         # GET /api/v1/users/:id, PATCH, DELETE
+        posts/
+          route.ts
+      api-docs/
+        page.tsx             # Scalar/Swagger UI rendering
+  lib/
+    api/
+      errors.ts              # Custom error hierarchy (APIError, ValidationError, NotFoundError)
+      response.ts            # Standardized envelope { success, data, error, meta }
+      middleware.ts          # HOF wrappers: withAuth, withRateLimit, withValidation, withLogging
+      rate-limit.ts          # Redis/Upstash limiter instances (sliding window, token bucket)
+      openapi.ts             # Spec aggregation
+    schemas/                 # Zod contracts (single source of truth)
+      user.ts
+      pagination.ts
+    services/                # Business logic (no HTTP semantics)
+      user.service.ts
+    repositories/            # Database/ORM logic
+      user.repo.ts
+    utils/
+      pagination.ts          # Cursor/offset helpers
+      filtering.ts           # Query param → Prisma/Drizzle where clause builder
+      sorting.ts             # Query param → orderBy builder
+  middleware.ts              # Edge middleware: coarse IP rate limiting, auth pre-check
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
