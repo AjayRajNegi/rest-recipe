@@ -32,9 +32,10 @@ export function withErrorHandler(handler: RouteHandler): RouteHandler {
       //   }
 
       const isDev = process.env.NODE_ENV === "development";
-      const message = isDev ? err.message : "Internal server error";
+      const message = err instanceof Error ? err.message : "Unknown error";
+      const error = isDev ? message : "Internal server error";
 
-      return sendError();
+      return sendError("INTERNAL_SERVER_ERROR", 500, error);
     }
   };
 }

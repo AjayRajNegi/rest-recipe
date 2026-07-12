@@ -11,9 +11,9 @@ export const sendSuccess = <T>(
   message: string,
   statusCode: number = 200,
   data?: T,
-): Response => {
-  const response: ApiResponse = { success: true, message, data };
-  return Response.json(response, { status: statusCode });
+): NextResponse => {
+  const response: ApiResponse<T> = { success: true, message, data };
+  return NextResponse.json(response, { status: 200 });
 };
 
 export const sendError = (
