@@ -13,7 +13,7 @@ export const sendSuccess = <T>(
   data?: T,
 ): NextResponse => {
   const response: ApiResponse<T> = { success: true, message, data };
-  return NextResponse.json(response, { status: 200 });
+  return NextResponse.json(response, { status: statusCode });
 };
 
 export const sendError = (
