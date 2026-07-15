@@ -4,9 +4,8 @@ import { fail } from "./responses";
 
 type Handler<Ctx> = (request: Request, context: Ctx) => Promise<Response>;
 
-const isDev = process.env.NODE_ENV !== "production";
-console.log(isDev);
-
+// const isDev = process.env.NODE_ENV !== "production" ? true : false;
+const isDev = false;
 function logError(
   level: "info" | "warn" | "error",
   err: unknown,
