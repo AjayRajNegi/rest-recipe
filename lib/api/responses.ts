@@ -10,18 +10,6 @@ export function ok<T>(data: T, meta?: object, init?: ResponseInit) {
     init,
   );
 }
-
-export function created<T>(data: T, location?: string) {
-  return NextResponse.json(
-    { success: true, data },
-    { status: 201, headers: location ? { Location: location } : undefined },
-  );
-}
-
-export function noContent() {
-  return new NextResponse(null, { status: 204 });
-}
-
 export function fail(
   status: number,
   code: string,
@@ -39,4 +27,15 @@ export function fail(
     },
     { status },
   );
+}
+
+export function created<T>(data: T, location?: string) {
+  return NextResponse.json(
+    { success: true, data },
+    { status: 201, headers: location ? { Location: location } : undefined },
+  );
+}
+
+export function noContent() {
+  return new NextResponse(null, { status: 204 });
 }

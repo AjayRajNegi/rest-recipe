@@ -9,7 +9,12 @@ export async function parseBody<T extends z.ZodTypeAny>(
   try {
     json = await request.json();
   } catch (err) {
-    throw new ApiError(400, "INVALID_JSON", "Request body must be valid json");
+    throw new ApiError(
+      400,
+      "INVALID_JSON",
+      "Request body must be valid json",
+      err,
+    );
   }
 
   const result = schema.safeParse(json);
@@ -28,7 +33,7 @@ export async function parseBody<T extends z.ZodTypeAny>(
 export async function parseQuery<T extends z.ZodTypeAny>(
   request: Request,
   schema: T,
-): z.infer<T> {
+): Promise<z.infer<T>> {
   const { searchParams } = new URL(request.url);
   const result = schema.safeParse(Object.fromEntries(searchParams));
 

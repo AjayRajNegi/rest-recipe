@@ -5,6 +5,7 @@ import { fail } from "./responses";
 type Handler<Ctx> = (request: Request, context: Ctx) => Promise<Response>;
 
 const isDev = process.env.NODE_ENV !== "production";
+console.log(isDev);
 
 function logError(
   level: "info" | "warn" | "error",
@@ -14,7 +15,7 @@ function logError(
   console[level === "info" ? "log" : level](
     JSON.stringify({
       level,
-      message: err instanceof Error ? err.message : String(err),
+      message: isDev && err instanceof Error ? err.message : String(err),
       stack: isDev && err instanceof Error ? err.stack : undefined,
       timestamp: new Date().toISOString(),
       ...extra,
