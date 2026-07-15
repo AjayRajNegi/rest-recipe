@@ -4,7 +4,10 @@ export type ErrorCode =
   | "FORBIDDEN"
   | "BAD_REQUEST"
   | "CONFLICT"
-  | "INTERNAL_ERROR";
+  | "INTERNAL_ERROR"
+  | "VALIDATION_ERROR"
+  | "INVALID_JSON"
+  | "INVALID_QUERY";
 
 export class ApiError extends Error {
   constructor(
@@ -12,6 +15,7 @@ export class ApiError extends Error {
     public readonly code: ErrorCode,
     message: string,
     public readonly details?: unknown,
+    public readonly expose: boolean = true,
   ) {
     super(message);
     this.name = "ApiError";

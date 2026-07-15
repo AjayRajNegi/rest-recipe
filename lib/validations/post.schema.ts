@@ -9,4 +9,19 @@ export const listPostsQuerySechame = z.object({
   order: z.enum(["asc", "desc"]).default("desc"),
 });
 
+export const createPostSchema = z.object({
+  title: z.string().min(3).max(200),
+  content: z.string().min(1),
+  status: z.enum(["DRAFT", "PUBLISHED"]).default("DRAFT"),
+  authorId: z.string().uuid(),
+});
+
+export const updatePostSchema = createPostSchema
+  .partial()
+  .refine((data) => Object.keys(data).length > 0, {
+    message: "At least one field must be provided",
+  });
+
 export type ListPostsQuery = z.infer<typeof listPostsQuerySechame>;
+export type CreatePostInput = z.infer<typeof createPostSchema>;
+export type UpdatePostInput = z.infer<typeof updatePostSchema>;

@@ -1,6 +1,11 @@
 import { Prisma } from "@/app/generated/prisma/client";
 import prisma from "../prisma";
-import { ListPostsQuery } from "../validations/post.schema";
+import {
+  CreatePostInput,
+  ListPostsQuery,
+  UpdatePostInput,
+} from "../validations/post.schema";
+import { NotFound } from "../api/errors";
 
 export const postService = {
   async listPosts(query: ListPostsQuery) {
@@ -43,5 +48,39 @@ export const postService = {
         totalPages: Math.ceil(totalItems / limit),
       },
     };
+  },
+
+  async getPost(id: string) {
+    const post = await prisma.post.findUnique({
+      where: { id },
+      include: {
+        author: {
+          select: {
+            id: true,
+            name: true,
+          },
+        },
+        _count: {
+          select: {
+            comments: true,
+          },
+        },
+      },
+    });
+
+    if (!post) {
+      throw NotFound("Post");
+    }
+  },
+
+  async createPost(input: CreatePostInput) {
+    return prisma.post.create({ data: input });
+  },
+
+  async updatePost(id: string, input: UpdatePostInput) {
+    return prisma.post.update({ where: { id }, data: input });
+  },
+  async deletePost(id: string) {
+    return prisma.post.delete({ where: { id } });
   },
 };
