@@ -7,7 +7,8 @@ export type ErrorCode =
   | "INTERNAL_ERROR"
   | "VALIDATION_ERROR"
   | "INVALID_JSON"
-  | "INVALID_QUERY";
+  | "INVALID_QUERY"
+  | "RATE_LIMITED";
 
 export class ApiError extends Error {
   constructor(
@@ -16,6 +17,7 @@ export class ApiError extends Error {
     message: string,
     public readonly details?: unknown,
     public readonly expose: boolean = true,
+    public readonly headers?: Record<string, string>,
   ) {
     super(message);
     this.name = "ApiError";

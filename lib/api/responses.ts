@@ -15,6 +15,7 @@ export function fail(
   code: string,
   message: string,
   details?: unknown,
+  headers?: Record<string, string>,
 ) {
   return NextResponse.json(
     {
@@ -25,7 +26,7 @@ export function fail(
         details,
       },
     },
-    { status },
+    { status, headers },
   );
 }
 
