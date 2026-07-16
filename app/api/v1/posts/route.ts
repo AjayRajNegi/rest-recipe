@@ -1,4 +1,4 @@
-import { withErrorHandler } from "@/lib/api/middleware";
+import { withErrorHandler } from "@/lib/api/handler";
 import { created, ok } from "@/lib/api/responses";
 import { parseBody, parseQuery } from "@/lib/api/validate";
 import { postService } from "@/lib/services/post.service";
