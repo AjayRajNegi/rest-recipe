@@ -1,11 +1,11 @@
 import { Ratelimit } from "@upstash/ratelimit";
 import { Redis } from "@upstash/redis";
 import { ApiError } from "./errors";
-import { config } from "../utils/env";
+import { envConfig } from "../utils/env";
 
 const redis = new Redis({
-  url: config.rateLimit.url,
-  token: config.rateLimit.token,
+  url: envConfig.rateLimit.url,
+  token: envConfig.rateLimit.token,
 });
 
 const limiterCache = new Map<number, Ratelimit>();
@@ -25,6 +25,7 @@ function getLimiter(limit: number): Ratelimit {
 }
 
 function resolveClientId(request: Request): string {
+  // TODO : Cross-check if the x-api-key header would be present, if not then use userId
   const apiKey = request.headers.get("x-api-key");
   if (apiKey) return `key:${apiKey}`;
 

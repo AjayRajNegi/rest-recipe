@@ -1,6 +1,5 @@
-export const config = {
+export const envConfig = {
   env: process.env.NODE_ENV || "development",
-  port: parseInt(process.env.PORT || "3000", 10),
   db: {
     url: process.env.DATABASE_URL,
   },
@@ -16,12 +15,11 @@ export const config = {
   rateLimit: {
     url: process.env.UPSTASH_REDIS_REST_URL,
     token: process.env.UPSTASH_REDIS_REST_TOKEN,
-    windowMs: parseInt(process.env.RATE_LIMIT_WINDOW_MS || "900000", 10),
-    max: parseInt(process.env.RATE_LIMIT_MAX || "100", 10),
   },
 };
 
-const required = ["DATABASE_URL", "JWT_ACCESS_SECRET", "JWT_REFRESH_SECRET"];
+// const required = ["DATABASE_URL", "JWT_ACCESS_SECRET", "JWT_REFRESH_SECRET"];
+const required = ["DATABASE_URL"];
 
 for (const key of required) {
   if (!process.env[key]) {
