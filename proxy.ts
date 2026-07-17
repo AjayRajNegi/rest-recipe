@@ -15,7 +15,7 @@ const CORS_HEADERS_BASE = {
   "Access-Control-Max-Age": "86400",
 };
 
-export function porxy(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const origin = request.headers.get("origin");
   const isAllowed = origin ? allowedOrigin.has(origin) : false;
 
