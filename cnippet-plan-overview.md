@@ -61,6 +61,35 @@ Before publishing any content, help us design a complete brand identity system t
 
 Organize your recommendations into the following categories.
 
+### Priority
+
+#### Brand Identity
+
+- Logo (+ light/dark variants)
+- Color palette
+- Typography
+- Brand voice & tone
+- Simple design guidelines
+- Profile pictures
+- Social banners
+
+#### Content
+
+- Carousel template
+- Post template
+- Thumbnail template
+- Screenshot/mockup template
+
+#### Motion
+
+- Logo animation (2–3 sec)
+- Simple intro/outro
+- Lower thirds (name/title)
+- CTA animation (Follow / Visit website)
+- Basic transition preset
+
+#### Later
+
 ### A. Core Brand Identity
 
 Help us define and create:
