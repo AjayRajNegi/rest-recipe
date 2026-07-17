@@ -1,7 +1,11 @@
 import { z } from "zod";
 
 export const listPostsQuerySechame = z.object({
-  page: z.coerce.number().int().min(1).default(1),
+  // For offset pagination:
+  // page: z.coerce.number().int().min(1).default(1),
+
+  // For cursor pagination
+  cursor: z.string().uuid().optional(),
   limit: z.coerce.number().int().min(1).max(20).default(10),
   status: z.enum(["DRAFT", "PUBLISHED", "ARCHIVED"]).default("PUBLISHED"),
   search: z.string().trim().max(200).optional(),

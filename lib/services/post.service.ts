@@ -9,7 +9,7 @@ import { NotFound } from "../api/errors";
 
 export const postService = {
   async listPosts(query: ListPostsQuery) {
-    const { page, limit, status, search, sort, order } = query;
+    const { cursor, limit, status, search, sort, order } = query;
 
     const where: Prisma.PostWhereInput = {
       ...(status && { status }),
@@ -21,13 +21,14 @@ export const postService = {
       }),
     };
 
+    // Cursor Pagination
     const [totalItems, posts] = await prisma.$transaction([
       prisma.post.count({ where }),
       prisma.post.findMany({
         where,
+        take: limit + 1,
+        ...(cursor && { cursor: { id: cursor }, skip: 1 }),
         orderBy: { [sort]: order },
-        skip: (page - 1) * limit,
-        take: limit,
         include: {
           author: {
             select: {
@@ -39,15 +40,51 @@ export const postService = {
       }),
     ]);
 
+    let nextCursor: string | null = null;
+
+    if (posts.length > limit) {
+      const nextItem = posts.pop()!;
+      nextCursor = nextItem.id;
+    }
+
     return {
       posts,
       meta: {
-        page,
         limit,
         totalItems,
         totalPages: Math.ceil(totalItems / limit),
+        nextCursor,
       },
     };
+
+    // Offset Pagination
+    // const [totalItems, posts] = await prisma.$transaction([
+    //   prisma.post.count({ where }),
+    //   prisma.post.findMany({
+    //     where,
+    //     orderBy: { [sort]: order },
+    //     skip: (page - 1) * limit,
+    //     take: limit,
+    //     include: {
+    //       author: {
+    //         select: {
+    //           id: true,
+    //           name: true,
+    //         },
+    //       },
+    //     },
+    //   }),
+    // ]);
+
+    // return {
+    //   page,
+    //   posts,
+    //   meta: {
+    //     limit,
+    //     totalItems,
+    //     totalPages: Math.ceil(totalItems / limit),
+    //   },
+    // };
   },
 
   async getPost(id: string) {

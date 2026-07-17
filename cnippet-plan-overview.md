@@ -1,71 +1,6 @@
-# Role
-
-You are an experienced startup growth consultant, brand strategist, digital marketer, and content strategist who has helped early-stage SaaS and developer tooling companies grow from 0 to 100K+ users.
-
-Your advice should be practical, opinionated, structured, and tailored for a bootstrapped startup with limited marketing experience.
-
----
-
-# Context
-
-I'm one of the founders of a startup called **Cnippet**.
-
-Website:
-https://www.cnippet.dev/
-
-Our mission is to build products and utilities that make software development faster and more enjoyable.
-
-Although developers are our primary audience, we also build productivity and automation tools that can benefit founders, startups, and business owners.
-
-Our long-term vision is to become a trusted brand that developers immediately think of whenever they need a useful tool.
-
-We intend to launch many products over time rather than relying on a single flagship product.
-
----
-
-# Current Situation
-
-We have:
-
-- no social media presence
-- no content strategy
-- no brand guidelines
-- no marketing experience
-- no existing audience
-
-We are starting completely from zero.
-
-Our primary platforms are:
-
-- X (Twitter)
-- LinkedIn
-- Instagram
-
-Secondary platform:
-
-- YouTube
-
-We are a small team, so we want a marketing system that is realistic to maintain without hiring a dedicated marketing team.
-
----
-
-# What I Need
-
-I don't just want content ideas.
-
-I want a complete roadmap for building our company's online presence from scratch.
-
-Think of this like creating the operating manual for our marketing department.
-
-Please organize your response into chronological phases.
-
----
-
 # Deliverables
 
 ## Phase 1 — Brand Foundation
-
-Help us define:
 
 - Brand mission
 - Brand vision
@@ -80,13 +15,9 @@ Help us define:
 - Business trust signals
 - How we should differentiate ourselves from other developer tool companies
 
-Also explain the reasoning behind each recommendation.
-
 ---
 
 ## Phase 2 — Audience Research
-
-Help identify:
 
 Primary audiences
 
@@ -103,7 +34,7 @@ Examples:
 - startup owners
 - students
 
-For each audience explain:
+For each:
 
 - goals
 - frustrations
@@ -116,40 +47,215 @@ For each audience explain:
 
 ## Phase 3 — Competitive Analysis
 
-Teach me how to analyze competitors.
-
-Explain:
-
 - what to observe
 - what metrics matter
 - how to reverse engineer successful content
 - how to identify content gaps
 - how to avoid simply copying competitors
 
-Suggest companies and creators I should study in the developer tools ecosystem.
+---
+
+## Phase 4 — Brand Identity & Motion Design System
+
+Before publishing any content, help us design a complete brand identity system that scales across social media, our website, product launches, tutorials, advertisements, documentation, and YouTube.
+
+Organize your recommendations into the following categories.
+
+### A. Core Brand Identity
+
+Help us define and create:
+
+- Logo and logo usage guidelines
+- Color palette
+- Typography system
+- Iconography
+- Illustration style
+- Graphic elements and patterns
+- Grid system
+- Spacing guidelines
+- Brand imagery style
+- Visual hierarchy
+- Accessibility considerations
+
+Explain why each element matters and where it should be used.
 
 ---
 
-## Phase 4 — Brand Identity
+### B. Social Media Identity
 
-Before posting content, what assets should we prepare?
+Recommend assets for:
 
-Examples:
+- Profile photos
+- Cover banners
+- Highlight covers (Instagram)
+- Carousel templates
+- Quote templates
+- Announcement templates
+- Product launch templates
+- Comparison templates
+- Poll templates
+- Story templates
+- LinkedIn post templates
+- X image templates
+- Thumbnail templates
+- CTA cards
+- End cards
 
-- logo usage
-- colors
-- typography
-- profile images
-- banners
-- iconography
-- illustration style
-- thumbnail style
-- templates
-- visual consistency
-- design system
-- content templates
+Ensure the templates are modular so they can be reused across many products.
 
-Mention anything beginners usually forget.
+---
+
+### C. Motion Branding
+
+Recommend a complete motion identity for our brand.
+
+Include assets such as:
+
+- Logo reveal animation
+- Logo outro animation
+- Brand ident (2–5 seconds)
+- Intro sequence
+- Outro sequence
+- Animated transitions
+- Scene transitions
+- Lower thirds
+- Name/title animations
+- Call-to-action animations
+- Subscribe/follow animations
+- Progress bars
+- Loading animations
+- Feature highlight animations
+- Product showcase animations
+- Screen recording overlays
+- Cursor click animations
+- Zoom and focus effects
+- Motion backgrounds
+- Animated icons
+- Animated typography presets
+- Background loops
+- Notification animations
+- Success/error animations
+- Motion principles (speed, easing, timing, rhythm)
+
+Explain how these assets should remain consistent across all videos.
+
+---
+
+### D. Product UI Motion Language
+
+Since we build software products, help us establish a consistent UI animation language.
+
+Cover:
+
+- Button interactions
+- Hover effects
+- Micro-interactions
+- Modal transitions
+- Navigation transitions
+- Page transitions
+- Loading states
+- Empty states
+- Skeleton loaders
+- Success states
+- Error states
+- Toast notifications
+- Drag-and-drop animations
+- List animations
+- Expand/collapse animations
+- Form interactions
+
+Explain how these contribute to perceived product quality and user experience.
+
+---
+
+### E. Video Production Kit
+
+Recommend reusable assets for educational and product videos.
+
+Examples include:
+
+- Intro music
+- Outro music
+- Sound effects library
+- Transition sound effects
+- UI interaction sounds
+- Background music categories
+- Screen recording layouts
+- Webcam layouts
+- Split-screen layouts
+- Code editor layouts
+- Terminal recording style
+- Browser mockups
+- Device mockups
+- Animated callouts
+- Pointer styles
+- Captions
+- Highlight boxes
+- Zoom presets
+- Blur presets
+- Chapter cards
+- Section dividers
+- B-roll guidelines
+
+The goal is to reduce editing time while maintaining a recognizable visual identity.
+
+---
+
+### F. Design System
+
+Recommend a scalable design system covering:
+
+- Component library
+- Design tokens
+- Color tokens
+- Typography tokens
+- Icon library
+- Motion tokens
+- Elevation/shadow system
+- Border radius system
+- Illustration library
+- Figma organization
+- Naming conventions
+- Asset management
+- Versioning
+
+Explain how to maintain consistency as more products are released.
+
+---
+
+### G. Brand Asset Library
+
+Recommend a centralized repository of reusable brand assets.
+
+Include:
+
+- Logos
+- Icons
+- Illustrations
+- Mockups
+- Backgrounds
+- Motion graphics
+- Video assets
+- Sound assets
+- Lottie animations
+- SVG assets
+- Marketing screenshots
+- Device frames
+- Social templates
+- Presentation templates
+- Pitch deck templates
+- Press kit
+- Media kit
+
+Explain how to organize these assets so every team member can quickly find and reuse them.
+
+---
+
+### H. Beginner Mistakes
+
+List the most common branding and motion design mistakes made by early-stage SaaS and developer tool startups.
+
+Explain how to avoid them while keeping the brand simple, professional, and scalable.
 
 ---
 
@@ -161,8 +267,6 @@ For each platform:
 - LinkedIn
 - Instagram
 - YouTube
-
-Explain:
 
 - what works
 - what doesn't
@@ -183,8 +287,6 @@ Explain:
 
 Design a complete content strategy.
 
-Categorize content into pillars such as:
-
 - educational
 - product
 - tutorials
@@ -203,9 +305,7 @@ Categorize content into pillars such as:
 - debugging
 - coding practices
 
-Feel free to create better categories.
-
-For every pillar explain:
+For every pillar:
 
 - purpose
 - ideal audience
@@ -229,8 +329,6 @@ Design a workflow covering:
 - engagement
 - analytics
 - iteration
-
-Recommend tools where appropriate.
 
 ---
 
@@ -257,23 +355,17 @@ Discuss:
 - developer communities
 - newsletters
 
-Explain how each integrates with our social strategy.
-
 ---
 
 ## Phase 9 — Metrics
 
 What should we measure?
 
-Include:
-
 - awareness metrics
 - engagement metrics
 - growth metrics
 - conversion metrics
 - product metrics
-
-Explain which metrics matter most at each stage.
 
 ---
 
@@ -307,8 +399,6 @@ Explain how AI can help us with:
 - repurposing content
 - analytics
 
-Mention where AI should **not** replace human judgment.
-
 ---
 
 ## Phase 12 — 90-Day Action Plan
@@ -324,13 +414,11 @@ Create a week-by-week roadmap covering:
 - analytics
 - iteration
 
-Make it realistic for a small startup.
-
 ---
 
 ## Phase 13 — Scaling
 
-Once we gain traction, explain:
+Once we gain traction:
 
 - when to hire
 - what roles to hire first
@@ -341,23 +429,3 @@ Once we gain traction, explain:
 - ambassador programs
 
 ---
-
-# Constraints
-
-- Assume we are beginners in marketing.
-- Prefer practical frameworks over theory.
-- Prioritize long-term brand building over growth hacks.
-- Recommend systems that are sustainable for a small startup.
-- When discussing any framework, include examples relevant to developer tools.
-- Highlight common beginner mistakes and how to avoid them.
-- If there are trade-offs between different approaches, explain them.
-
----
-
-# Before Answering
-
-First, identify any important information that is still missing about our company, target audience, products, resources, goals, or constraints.
-
-Ask all necessary clarification questions together in a single numbered list.
-
-After I answer those questions, generate the complete roadmap.
