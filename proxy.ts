@@ -1,11 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { envConfig } from "./lib/utils/env";
 
-// TODO : Fix in prod
 const allowedOrigin = new Set([
-  ...(envConfig.env === "development"
-    ? ["http://localhost:3000"]
-    : ["http://localhost:3000"]),
+  ...(envConfig.env === "development" ? ["http://localhost:3000"] : [""]),
 ]);
 
 // TODO : Confirm headers

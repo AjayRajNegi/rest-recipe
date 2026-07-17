@@ -6,8 +6,7 @@ import { enforceRateLimit } from "./rateLimit";
 type Handler<Ctx> = (request: Request, context: Ctx) => Promise<Response>;
 
 // TODO : Fix in production
-// const isDev = process.env.NODE_ENV !== "production" ? true : false;
-const isDev = false;
+const isDev = process.env.NODE_ENV !== "production" ? true : false;
 
 function logError(
   level: "info" | "warn" | "error",

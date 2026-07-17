@@ -64,14 +64,12 @@ export async function enforceRateLimit(
       0,
       Math.ceil((reset - Date.now()) / 1000),
     );
-    // headers["Retry-After"] = String(retryAfterSeconds);
+    headers["Retry-After"] = String(retryAfterSeconds);
     throw new ApiError(
       429,
       "RATE_LIMITED",
-      "Too many requests. Please retry later.",
-      { retryAfterSeconds },
-      //   TODO : Modify Error class to accept headers
-      //   headers,
+      `Too many requests. Please retry later. Retry after seconds ${retryAfterSeconds}`,
+      headers,
     );
   }
 

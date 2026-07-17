@@ -108,6 +108,8 @@ export const postService = {
     if (!post) {
       throw NotFound("Post");
     }
+
+    return { post };
   },
 
   async createPost(input: CreatePostInput) {
