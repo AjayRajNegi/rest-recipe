@@ -1,3 +1,5 @@
+// Add you env's here:
+
 export const envConfig = {
   env: process.env.NODE_ENV || "development",
   db: {
@@ -9,15 +11,13 @@ export const envConfig = {
   //   accessExpiresIn: process.env.JWT_ACCESS_EXPIRES_IN || "15m",
   //   refreshExpiresIn: process.env.JWT_REFRESH_EXPIRES_IN || "7d",
   // },
-  // bcrypt: {
-  //   rounds: parseInt(process.env.BCRYPT_ROUNDS || "10", 10),
-  // },
   rateLimit: {
     url: process.env.UPSTASH_REDIS_REST_URL,
     token: process.env.UPSTASH_REDIS_REST_TOKEN,
   },
 };
 
+// Add required env's here:
 // const required = ["DATABASE_URL", "JWT_ACCESS_SECRET", "JWT_REFRESH_SECRET"];
 const required = ["DATABASE_URL"];
 
